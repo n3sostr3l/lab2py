@@ -56,7 +56,7 @@ import seaborn as sns
 # 1. СОЗДАНИЕ И ОБРАБОТКА МАССИВОВ
 # ============================================================
 
-def create_vector():
+def create_vector() -> np.ndarray:
     """
     Создать массив от 0 до 9.
 
@@ -71,7 +71,7 @@ def create_vector():
     pass
 
 
-def create_matrix():
+def create_matrix() -> np.ndarray:
     """
     Создать матрицу 5x5 со случайными числами [0,1].
 
@@ -86,7 +86,7 @@ def create_matrix():
     pass
 
 
-def reshape_vector(vec) -> np.ndarray:
+def reshape_vector(vec: np.ndarray) -> np.ndarray:
     """
     Преобразовать (10,) -> (2,5)
 
@@ -100,10 +100,11 @@ def reshape_vector(vec) -> np.ndarray:
         numpy.ndarray: Преобразованный массив формы (2, 5)
     """
     # Подсказка: используйте vec.reshape(2,5)
+    return vec.reshape(2,5)
     pass
 
 
-def transpose_matrix(mat: np.ndarray):
+def transpose_matrix(mat: np.ndarray) -> np.ndarray:
     """
     Транспонирование матрицы.
 
@@ -117,14 +118,14 @@ def transpose_matrix(mat: np.ndarray):
         numpy.ndarray: Транспонированная матрица
     """
     # Подсказка: используйте mat.T или np.transpose(mat)
+    return mat.T
     pass
-
 
 # ============================================================
 # 2. ВЕКТОРНЫЕ ОПЕРАЦИИ
 # ============================================================
 
-def vector_add(a, b):
+def vector_add(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     """
     Сложение векторов одинаковой длины.
     (Векторизация без циклов)
@@ -137,10 +138,11 @@ def vector_add(a, b):
         numpy.ndarray: Результат поэлементного сложения
     """
     # Подсказка: используйте оператор +
+    return a+b
     pass
 
 
-def scalar_multiply(vec, scalar):
+def scalar_multiply(vec: np.ndarray, scalar: np.ndarray) -> np.ndarray:
     """
     Умножение вектора на число.
     
@@ -152,10 +154,11 @@ def scalar_multiply(vec, scalar):
         numpy.ndarray: Результат умножения вектора на скаляр
     """
     # Подсказка: используйте оператор *
+    return scalar*vec
     pass
 
 
-def elementwise_multiply(a, b):
+def elementwise_multiply(a:np.ndarray, b: np.ndarray) -> np.ndarray:
     """
     Поэлементное умножение.
     
@@ -167,10 +170,11 @@ def elementwise_multiply(a, b):
         numpy.ndarray: Результат поэлементного умножения
     """
     # Подсказка: используйте оператор *
+    return a*b
     pass
 
 
-def dot_product(a, b):
+def dot_product(a:np.ndarray, b: np.ndarray) -> int:
     """
     Скалярное произведение.
 
@@ -185,6 +189,7 @@ def dot_product(a, b):
         float: Скалярное произведение векторов
     """
     # Подсказка: используйте np.dot(a, b)
+    return np.dot(a,b)
     pass
 
 
@@ -192,7 +197,7 @@ def dot_product(a, b):
 # 3. МАТРИЧНЫЕ ОПЕРАЦИИ
 # ============================================================
 
-def matrix_multiply(a, b):
+def matrix_multiply(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     """
     Умножение матриц.
 
@@ -207,10 +212,11 @@ def matrix_multiply(a, b):
         numpy.ndarray: Результат умножения матриц
     """
     # Подсказка: используйте a @ b или np.matmul(a, b)
+    return a@b
     pass
 
 
-def matrix_determinant(a):
+def matrix_determinant(a: np.ndarray) -> int:
     """
     Определитель матрицы.
 
@@ -224,10 +230,11 @@ def matrix_determinant(a):
         float: Определитель матрицы
     """
     # Подсказка: используйте np.linalg.det(a)
+    return np.linalg.det(a)
     pass
 
 
-def matrix_inverse(a):
+def matrix_inverse(a: np.ndarray) -> np.ndarray:
     """
     Обратная матрица.
 
@@ -241,10 +248,11 @@ def matrix_inverse(a):
         numpy.ndarray: Обратная матрица
     """
     # Подсказка: используйте np.linalg.inv(a)
+    return np.linalg.inv(a)
     pass
 
 
-def solve_linear_system(a, b):
+def solve_linear_system(a: np.ndarray, b: np.ndarray) -> np.ndarray:
     """
     Решить систему Ax = b
 
@@ -259,6 +267,7 @@ def solve_linear_system(a, b):
         numpy.ndarray: Решение системы x
     """
     # Подсказка: используйте np.linalg.solve(a, b)
+    return np.linalg.solve(a, b)
     pass
 
 
@@ -496,6 +505,6 @@ def test_plot_line():
     y = np.array([4,5,6])
     plot_line(x, y)
 
-
 if __name__ == "__main__":
     print("Запустите python3 -m pytest test.py -v для проверки лабораторной работы.")
+    
